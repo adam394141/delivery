@@ -3,57 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>柯恩志高雄市派報進度追蹤</title>
+<title>高雄市派報進度追蹤</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Microsoft JhengHei',sans-serif;background:#f5f5f0;color:#1a1a18;min-height:100vh;padding:16px}
-.wrap{max-width:900px;margin:0 auto}
-h1{font-size:20px;font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:8px}
-h1 .sub{font-size:13px;font-weight:400;color:#888;margin-left:4px}
-.updated{font-size:12px;color:#aaa;margin-bottom:16px}
-/* Hero */
-.hero{background:#fff;border:1px solid #e8e6df;border-radius:14px;padding:20px;margin-bottom:16px}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+.wrap{max-width:920px;margin:0 auto}
+h1{font-size:20px;font-weight:600;margin-bottom:2px;display:flex;align-items:center;gap:8px}
+.updated{font-size:12px;color:#aaa;margin-bottom:14px}
+.hero{background:#fff;border:1px solid #e8e6df;border-radius:14px;padding:20px;margin-bottom:14px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px}
 .hstat{text-align:center;padding:8px 4px}
 .hstat .lbl{font-size:11px;color:#888;margin-bottom:4px;letter-spacing:.04em}
 .hstat .val{font-size:30px;font-weight:700;line-height:1}
 .hstat .sub{font-size:11px;color:#888;margin-top:3px}
 .pbar{height:12px;background:#eee;border-radius:6px;overflow:hidden}
-.pbar-fill{height:100%;background:#2d7dd2;border-radius:6px;transition:width .6s ease}
+.pbar-fill{height:100%;background:#2d7dd2;border-radius:6px;transition:width .6s}
 .pbar-lbl{font-size:12px;color:#888;text-align:right;margin-top:4px}
-/* Zones */
-.section-title{font-size:14px;font-weight:600;margin-bottom:10px;color:#333}
-.zgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin-bottom:20px}
+.stitle{font-size:14px;font-weight:600;margin-bottom:10px;color:#333}
+.zgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:8px;margin-bottom:18px}
 .zcard{background:#fff;border:1px solid #e8e6df;border-radius:10px;padding:12px 14px}
-.zcard.done{opacity:.45}
-.zcard-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.zcard.done{opacity:.4}
+.zcard-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px}
 .zid{font-size:11px;color:#888}
 .zbadge{font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600}
 .zbadge.ns{background:#f0efe8;color:#777}
 .zbadge.wip{background:#fff3e0;color:#b26a00}
-.zbadge.done-b{background:#e8f5e9;color:#2e7d32}
-.zdists{font-size:11px;color:#888;margin-bottom:6px;line-height:1.5}
+.zbadge.db{background:#e8f5e9;color:#2e7d32}
+.zdists{font-size:11px;color:#888;margin-bottom:5px;line-height:1.5}
 .zshares{font-size:15px;font-weight:700}
-.zshares.ns-c{color:#b26a00}
-.zshares.wip-c{color:#1565c0}
-.zshares.done-c{color:#2e7d32}
+.ns-c{color:#b26a00}.wip-c{color:#1565c0}.done-c{color:#2e7d32}
 .zmini{font-size:10px;color:#aaa;margin-top:2px}
-.zpct{width:100%;height:5px;background:#eee;border-radius:3px;margin-top:8px;overflow:hidden}
+.zpct{width:100%;height:5px;background:#eee;border-radius:3px;margin-top:7px;overflow:hidden}
 .zpct-f{height:100%;background:#2d7dd2;border-radius:3px}
-/* Day tabs */
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.tab{padding:6px 14px;font-size:13px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#666;cursor:pointer;transition:all .15s}
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
+.tab{padding:6px 13px;font-size:13px;border:1px solid #ddd;border-radius:8px;background:#fff;color:#666;cursor:pointer;transition:all .15s}
 .tab:hover{background:#f5f5f0}
 .tab.on{background:#2d7dd2;color:#fff;border-color:#2d7dd2;font-weight:500}
-/* Day metrics */
-.dmet{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:14px}
+.dmet{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:12px}
 .dm{background:#fff;border:1px solid #e8e6df;border-radius:10px;padding:10px 12px}
 .dml{font-size:11px;color:#888;margin-bottom:2px}
 .dmv{font-size:20px;font-weight:700}
-/* Chips */
-.dsec{margin-bottom:12px;background:#fff;border:1px solid #e8e6df;border-radius:10px;padding:10px 12px}
-.dn{font-size:11px;font-weight:600;color:#888;margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase}
+.dsec{margin-bottom:10px;background:#fff;border:1px solid #e8e6df;border-radius:10px;padding:10px 12px}
+.dn{font-size:11px;font-weight:600;color:#888;margin-bottom:5px;letter-spacing:.05em;text-transform:uppercase}
 .chips{display:flex;flex-wrap:wrap;gap:4px}
 .chip{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:500}
 .cn{background:#e3f0fc;color:#1565c0}
@@ -61,34 +53,26 @@ h1 .sub{font-size:13px;font-weight:400;color:#888;margin-left:4px}
 .cw{background:#e8f5e9;color:#1b5e20}
 .cr{background:#fff3e0;color:#b26a00}
 .cu{background:#f0efe8;color:#555;opacity:.7}
-/* Legend */
-.leg{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.leg{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
 .li{display:flex;align-items:center;gap:4px;font-size:12px;color:#666}
 .ld{width:8px;height:8px;border-radius:50%}
-/* Footer */
-.footer{margin-top:20px;padding:14px 16px;background:#fff;border:1px solid #e8e6df;border-radius:10px;font-size:12px;color:#888;display:flex;align-items:flex-start;gap:8px}
-.note{font-size:11px;color:#aaa;margin-top:8px}
-@media(max-width:520px){
-  .hero-grid{grid-template-columns:1fr 1fr;}.hstat:last-child{grid-column:span 2}
-  .hstat .val{font-size:22px}
-}
+.footer{margin-top:16px;padding:12px 14px;background:#fff;border:1px solid #e8e6df;border-radius:10px;font-size:12px;color:#888;display:flex;gap:8px;align-items:flex-start}
+.note{font-size:10px;color:#aaa;margin-top:6px}
+@media(max-width:520px){.hero-grid{grid-template-columns:1fr 1fr}.hstat:last-child{grid-column:span 2}.hstat .val{font-size:22px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1><i class="ti ti-newspaper"></i> 高雄市選舉派報進度 <span class="sub">2026.05</span></h1>
+  <h1><i class="ti ti-newspaper"></i> 高雄市選舉派報進度</h1>
   <div class="updated" id="updatedAt"></div>
-
   <div class="hero">
     <div class="hero-grid" id="hgrid"></div>
     <div class="pbar"><div class="pbar-fill" id="pfill" style="width:0%"></div></div>
     <div class="pbar-lbl" id="pctlbl"></div>
   </div>
-
-  <div class="section-title">各選區狀態</div>
+  <div class="stitle">各選區狀態</div>
   <div class="zgrid" id="zgrid"></div>
-
-  <div class="section-title">每日派報明細</div>
+  <div class="stitle">每日派報明細</div>
   <div class="leg">
     <div class="li"><div class="ld" style="background:#2d7dd2"></div>正常派出</div>
     <div class="li"><div class="ld" style="background:#e53935"></div>取消/未派</div>
@@ -98,19 +82,18 @@ h1 .sub{font-size:13px;font-weight:400;color:#888;margin-left:4px}
   <div class="tabs" id="tabs"></div>
   <div class="dmet" id="dmet"></div>
   <div id="dareas"></div>
-
   <div class="footer">
     <i class="ti ti-info-circle" style="font-size:16px;flex-shrink:0;margin-top:1px"></i>
-    <div>此頁面每日更新派報進度。如需最新資訊請重新整理頁面（Ctrl+R / ⌘R）。</div>
+    <span>此頁面每日更新。如需最新資訊請重新整理頁面（Ctrl+R / ⌘R）。</span>
   </div>
-  <p class="note">* 份數依行政區總份數÷轄區數估算。已派份數為不重複計算之累計值，實際數字以正式報表為準。</p>
+  <p class="note">* 份數依行政區總份數÷轄區數估算，累計已派為不重複計算之估算值，實際以正式報表為準。</p>
 </div>
 
 <script>
 // ============================================================
-// ★ 每日更新：在下方 RAW 物件新增日期與派報資料即可
+// ★ 每日更新：修改 LAST_UPDATED，並在 RAW 新增當日資料
 // ============================================================
-const LAST_UPDATED = '2026-05-22';
+const LAST_UPDATED = '2026-05-24';
 
 const RAW = {
 "5/17":{
@@ -156,32 +139,55 @@ const RAW = {
   "路竹":["#4","#5"],
   "左營":["#159","#159-A","#160","#160-A","#161",
     {t:"new",v:"#147"},{t:"new",v:"#148"},{t:"new",v:"#149"},{t:"new",v:"#150"},{t:"new",v:"#152"}]
+},
+"5/23":{
+  "苓雅":["#36","#37","#38","#39","#43","#44",{t:"new",v:"#46"},{t:"new",v:"#47"}],
+  "鳳山":["#203","#217"],
+  "林園":["#55","#56"],
+  "新興":[{t:"cancelled",v:"#13"},{t:"cancelled",v:"#14"},{t:"cancelled",v:"#15"},
+    {t:"cancelled",v:"#16"},{t:"cancelled",v:"#17"},{t:"cancelled",v:"#18"},{t:"cancelled",v:"#20"}],
+  "楠梓":["#171","#172",{t:"cancelled",v:"#173"},{t:"cancelled",v:"#174"},
+    {t:"cancelled",v:"#175"},{t:"cancelled",v:"#175-A"},"#176","#177","#177-A",
+    {t:"new",v:"#163"},{t:"new",v:"#164"},{t:"new",v:"#165"},
+    {t:"new",v:"#165-A"},{t:"new",v:"#166"},{t:"new",v:"#169"}],
+  "前鎮":["#66","#67","#68","#69","#70","#71","#72","#73"]
+},
+"5/24":{
+  "東苓雅":["#31","#34","#35"],
+  "西苓雅":["#41","#42","#45"],
+  "南三民":["#113","#114","#121"],
+  "林園":["#61","#62"],
+  "小港":["#76","#77","#80-A","#83","#84"],
+  "楠梓":["#163","#166-A","#167","#168","#169","#170","#173","#174","#175","#175-A"],
+  "大社":["#58","#59","#60","#61"]
 }
 };
 // ============================================================
 
 const TOTAL=1094000;
 const PA={
-  '西三民':2885,'北三民':2885,'南三民':2885,
+  '西三民':2885,'北三民':2885,'南三民':2885,'三民':2885,
   '鳳山北區':3370,'鳳山中區':3370,'鳳山（五甲）':3370,'鳳山':3370,
-  '北前鎮':3034,'南前鎮':3034,'預備區 北前鎮':0,'預備區 前鎮':0,
+  '北前鎮':3034,'南前鎮':3034,'前鎮':3034,'預備區 北前鎮':0,'預備區 前鎮':0,
   '北鼓山':2993,'南鼓山':2993,'鼓山':2993,
   '鹽埕全區':2260,'鹽埕':2260,'旗津':4500,
   '東苓雅':2703,'西苓雅':2703,'苓雅':2703,
   '左營（新莊仔）':2855,'左營':2855,
   '楠梓':4121,'前金':2780,'新興':2470,
-  '路竹':2238,'湖內':2200,'小港':4607
+  '路竹':2238,'湖內':2200,'小港':4607,
+  '林園':2670,'大社':2000
 };
 const SD2D={
-  '西三民':'三民','北三民':'三民','南三民':'三民',
+  '西三民':'三民','北三民':'三民','南三民':'三民','三民':'三民',
   '鳳山北區':'鳳山','鳳山中區':'鳳山','鳳山（五甲）':'鳳山','鳳山':'鳳山',
-  '北前鎮':'前鎮','南前鎮':'前鎮','預備區 北前鎮':'前鎮','預備區 前鎮':'前鎮',
+  '北前鎮':'前鎮','南前鎮':'前鎮','前鎮':'前鎮','預備區 北前鎮':'前鎮','預備區 前鎮':'前鎮',
   '北鼓山':'鼓山','南鼓山':'鼓山','鼓山':'鼓山',
   '鹽埕全區':'鹽埕','鹽埕':'鹽埕','旗津':'旗津',
   '東苓雅':'苓雅','西苓雅':'苓雅','苓雅':'苓雅',
   '左營（新莊仔）':'左營','左營':'左營',
   '楠梓':'楠梓','前金':'前金','新興':'新興',
-  '路竹':'路竹','湖內':'湖內','小港':'小港'
+  '路竹':'路竹','湖內':'湖內','小港':'小港',
+  '林園':'林園','大社':'大社'
 };
 const ZONES=[
   {id:'第一區',total:45800,dists:['杉林','甲仙','六龜','內門','旗山','美濃']},
@@ -196,6 +202,7 @@ const ZONES=[
   {id:'第十區',total:148000,dists:['前鎮','小港']},
   {id:'第十一區',total:70400,dists:['大寮','林園']}
 ];
+const DT={'三民':138500,'鳳山':148300,'前鎮':78900,'小港':69100,'鼓山':44900,'鹽埕':11300,'旗津':9000,'苓雅':73000,'前金':13900,'新興':24700,'左營':62800,'楠梓':78300,'路竹':17900,'湖內':11000,'茄萣':10300,'阿蓮':9500,'田寮':2500,'大社':14000,'仁武':38300,'鳥松':19700,'大樹':14700,'永安':5500,'岡山':35100,'燕巢':10600,'彌陀':6800,'梓官':13200,'橋頭':16000,'杉林':4500,'甲仙':2100,'六龜':5000,'內門':5000,'旗山':13700,'美濃':15500,'大寮':43700,'林園':26700};
 
 function n(x){return typeof x==='string'?{t:'normal',v:x}:x;}
 function fmt(v){return Math.round(v).toLocaleString();}
@@ -206,7 +213,7 @@ function calcTotals(){
     for(const [sd,items] of Object.entries(dayData)){
       const pa=PA[sd]||0,d=SD2D[sd]||sd;
       for(const raw of items){
-        const {t,v}=n(raw);
+        const{t,v}=n(raw);
         if(t==='cancelled'||t==='reserve'||t==='undel') continue;
         const k=sd+':'+v;
         if(!seen.has(k)){seen.add(k);tot+=pa;dd[d]=(dd[d]||0)+pa;}
@@ -218,10 +225,10 @@ function calcTotals(){
 
 function calcDay(dayData){
   let areas=0,cancel=0,shares=0,newC=0;
-  for(const [sd,items] of Object.entries(dayData)){
+  for(const[sd,items]of Object.entries(dayData)){
     const pa=PA[sd]||0;
     for(const raw of items){
-      const {t}=n(raw);
+      const{t}=n(raw);
       if(t==='cancelled'){cancel++;continue;}
       if(t==='reserve'||t==='undel') continue;
       areas++;shares+=pa;if(t==='new') newC++;
@@ -230,13 +237,10 @@ function calcDay(dayData){
   return{areas,cancel,shares:Math.round(shares),newC};
 }
 
-function cc(t){
-  return t==='cancelled'?'cc':t==='new'?'cw':t==='reserve'?'cr':t==='undel'?'cu':'cn';
-}
+function chipClass(t){return t==='cancelled'?'cc':t==='new'?'cw':t==='reserve'?'cr':t==='undel'?'cu':'cn';}
 
-const {tot:delv,dd:distDel}=calcTotals();
-const rem=TOTAL-delv;
-const pct=Math.round(delv/TOTAL*100);
+const{tot:delv,dd:distDel}=calcTotals();
+const rem=TOTAL-delv,pct=Math.round(delv/TOTAL*100);
 
 document.getElementById('updatedAt').textContent='最後更新：'+LAST_UPDATED;
 document.getElementById('hgrid').innerHTML=`
@@ -249,15 +253,15 @@ document.getElementById('pctlbl').textContent='派發進度 '+pct+'%';
 
 document.getElementById('zgrid').innerHTML=ZONES.map(z=>{
   let zd=0;z.dists.forEach(d=>{zd+=(distDel[d]||0);});
-  const tot=z.total,pz=Math.min(Math.round(zd/tot*100),100);
+  const pz=Math.min(Math.round(zd/z.total*100),100);
   let st='ns',sl='未開始';
-  if(zd>=tot*0.99){st='done';sl='完成';}
+  if(zd>=z.total*0.99){st='done';sl='完成';}
   else if(zd>0){st='wip';sl='進行中';}
   return`<div class="zcard${st==='done'?' done':''}">
-    <div class="zcard-top"><span class="zid">${z.id}</span><span class="zbadge ${st==='done'?'done-b':st==='wip'?'wip':'ns'}">${sl}</span></div>
+    <div class="zcard-top"><span class="zid">${z.id}</span><span class="zbadge ${st==='done'?'db':st==='wip'?'wip':'ns'}">${sl}</span></div>
     <div class="zdists">${z.dists.join(' · ')}</div>
-    <div class="zshares ${st==='done'?'done-c':st==='wip'?'wip-c':'ns-c'}">${st==='done'?'✓ '+fmt(tot):st==='wip'?fmt(zd)+' / '+fmt(tot):fmt(tot)} 份</div>
-    ${st==='wip'?`<div class="zmini">尚餘 ${fmt(tot-zd)} 份</div>`:''}
+    <div class="zshares ${st==='done'?'done-c':st==='wip'?'wip-c':'ns-c'}">${st==='done'?'✓ '+fmt(z.total):st==='wip'?fmt(zd)+' / '+fmt(z.total):fmt(z.total)} 份</div>
+    ${st==='wip'?`<div class="zmini">尚餘 ${fmt(z.total-zd)} 份</div>`:''}
     <div class="zpct"><div class="zpct-f" style="width:${pz}%"></div></div>
   </div>`;
 }).join('');
@@ -270,7 +274,7 @@ function renderDay(){
     `<button class="tab${d===active?' on':''}" onclick="setDay('${d}')">${d}</button>`
   ).join('');
   const dd=RAW[active];
-  const {areas,cancel,shares,newC}=calcDay(dd);
+  const{areas,cancel,shares,newC}=calcDay(dd);
   document.getElementById('dmet').innerHTML=`
     <div class="dm"><div class="dml">今日派出份數</div><div class="dmv" style="color:#1565c0">${fmt(shares)}</div></div>
     <div class="dm"><div class="dml">派出區域</div><div class="dmv">${areas}</div></div>
@@ -279,11 +283,10 @@ function renderDay(){
   `;
   document.getElementById('dareas').innerHTML=Object.entries(dd).map(([sd,items])=>`
     <div class="dsec"><div class="dn">${sd}</div><div class="chips">
-      ${items.map(r=>{const{t,v}=n(r);return`<span class="chip ${cc(t)}">${v}</span>`;}).join('')}
+      ${items.map(r=>{const{t,v}=n(r);return`<span class="chip ${chipClass(t)}">${v}</span>`;}).join('')}
     </div></div>
   `).join('');
 }
-
 window.setDay=d=>{active=d;renderDay();};
 renderDay();
 </script>
